@@ -7,9 +7,3 @@
 	}else{
 		echo 'Erro ao excluir';
 	}
-
-	
-	
-		
-	
-

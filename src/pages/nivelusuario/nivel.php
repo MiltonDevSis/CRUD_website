@@ -6,20 +6,18 @@
 		$id = $_GET["id"];
 		
 		$sql = "SELECT descricao FROM descricao_usuario WHERE id = " . $id . " LIMIT 1;";
-	// dataset
-	$resultSet = $conexao -> query($sql);
-	
-	if ( $linha = $resultSet -> fetch() ){
-		$descricao = $linha["descricao"];
-	}else{
-		echo 'Nenhum registro encontrado';
-		exit;
+		$resultSet = $conexao -> query($sql);
+		if ( $linha = $resultSet -> fetch() ){
+			$descricao = $linha["descricao"];
+		}else{
+			echo 'Nenhum registro encontrado';
+			exit;
+			}
+			//modo de Inserção
+		}else{
+			$id = 0;				
+			$descricao = "";
 		}
-		//modo de Inserção
-	}else{
-		$id = 0;				
-		$descricao = "";
-	}
 ?>
 
 <html>

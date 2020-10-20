@@ -1,5 +1,4 @@
-
-	<?php 
+<?php 
 	$conexao = new PDO( "mysql:host=localhost;dbname=modelagem;port=3308", "root", "" );
 
 	$where = '';
@@ -35,6 +34,6 @@
 			</tr>
 			';
 		}					
-		?>
+?>
 	
 

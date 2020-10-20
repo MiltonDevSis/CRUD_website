@@ -14,13 +14,13 @@ function carregar(controller,page = ""){
 			page:page
 		},
 		complete:function(ret){
-			var objetoRetorno = page == ""?"#root":"#conteudo";
+			var objetoRetorno = page==""?"#root":"#conteudo";
 			$(objetoRetorno).html(ret.responseText);
 		}
 	});	
 }
 
 // trata o click do menu principal
-$(document).on("click", "#menuPrincipal .dropdown-item", function(){
-	carregar("page",$(this).data("page"))
+$(document).on("click","#menuPrincipal .dropdown-item",function(){
+	carregar("page",$(this).data("page"));
 });
