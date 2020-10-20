@@ -6,15 +6,21 @@ $(document).ready(function(){
 });
 
 // Função para carregamento de página
-function carregar(controller){
+function carregar(controller,page = ""){
 	$.ajax({
 		url:"index.php",
 		data:{
-			controller:controller
+			controller:controller,
+			page:page
 		},
 		complete:function(ret){
-			$("#root").html(ret.responseText);
+			var objetoRetorno = page == ""?"#root":"#conteudo";
+			$(objetoRetorno).html(ret.responseText);
 		}
 	});	
 }
 
+// trata o click do menu principal
+$(document).on("click", "#menuPrincipal .dropdown-item", function(){
+	carregar("page",$(this).data("page"))
+});
