@@ -5,8 +5,9 @@
 			// Recebendo as variaveis
 		$id 		= $_GET["id"];
 		$descricao 	= $_GET["descricao"];
+	}
 
-	if ($descricao == ""){
+		if ($descricao == ""){
 		echo 'O campo descrição é obrigatório';
 		exit;
 	}
@@ -19,11 +20,11 @@
 		// Conexão com banco de dados
 		$conexao = new PDO( "mysql:host=localhost;dbname=modelagem;port=3308", "root", "" );
 		if (isset($id)){
-			if (is_numeric($id)){
-				if ($id > 0){
-					$instrucaoSQL = "UPDATE nivelusuario SET descricao = '{$descricao}' WHERE id = " .$id;
-				}else{
-					$instrucaoSQL = "INSERT INTO nivelusuario (descricao) VALUES ('{$descricao}');";
+		if (is_numeric($id)){
+			if ($id > 0){
+				$instrucaoSQL = "UPDATE nivelusuario SET descricao = '{$descricao}' WHERE id = " .$id;
+			}else{
+				$instrucaoSQL = "INSERT INTO nivelusuario (descricao) VALUES ('{$descricao}');";
 			}
 		}else{
 			echo 'Parametro  inválido';
@@ -40,4 +41,5 @@
 		echo 'Erro ao salvar';
 	}
 	exit;
-}
+}							
+?>

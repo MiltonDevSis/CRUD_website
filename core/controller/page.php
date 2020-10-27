@@ -20,7 +20,7 @@ if (file_exists($htmlFile)){
 }
 
 //carrega arquivo JS
-$jsFile = "src/pages/{page}.js";
+$jsFile = "src/pages/{$page}.js";
 if(file_exists($jsFile)){
 	echo "<script type='text/javascript' src='{$jsFile}'></script>";
 }
