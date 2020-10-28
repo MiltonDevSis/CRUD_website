@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 	<head>
-		<title>Pesquisa de Nível de Usuário</title>
+		<title>Pesquisa Cadastro de Clientes</title>
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<form action="listar_nivelusuario.php" method="POST" target="resultado">
+		<form action="listar.php" method="POST" target="resultado">
 			<fieldset>
 				<legend>Pesquisa</legend>
 				<label for="id">ID </label>
 				<input type="text" id="id" name="id" />
-				<label for="descricao">Descrição</label>
-				<input type="text" id="descricao" name="descricao" />
-				<input type="submit" value="pesquisar" />
+				<label for="nome">Nome</label>
+				<input type="text" id="nome" name="nome" />
+				<label for="nome">CPF / CNPJ</label>
+				<input type="text" id="cpf_cnpj" name="cpf_cnpj" />
+				<label for="nome">Telefone</label>
+				<input type="text" id="telefone" name="telefone" />
+				<label for="nome">Email</label>
+				<input type="text" id="email" name="email" />
 			</fieldset>
 		</form>	
-		<iframe id="resultado" name="resultado" src="listar_nivelusuario" frameborder="0"></iframe>
+		<iframe id="resultado" name="resultado" src="listar.php" frameborder="0"></iframe>
 	</body>
 </html>

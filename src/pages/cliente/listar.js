@@ -1,12 +1,18 @@
-function excluir(id){
-	if ( confirm('Tem certeza que deseja excluir!') ){
-		window.location.href = "excluir_nivelusuario.php?id=" + id;
+function excluir(usuario){
 
-	}
+	$.ajax({
+		url:"index.php",
+		dataType:"JSON",
+		data:{
+			controller:"page",
+			page:"cliente/excluir",
+			id:usuario
+		}
+	});	
 }
 
 // Carrega os níveis de usuário para lista (table)
-function carregarNivelUsuario(){
+function carregarCliente(){
 	$.ajax({
 		url:"index.php",
 		dataType:"JSON",
@@ -24,8 +30,8 @@ function carregarNivelUsuario(){
 				var tdCpf_cnpf		= $("<td>"+dado.cpf_cnpj+"</td>");
 				var tdTelefone		= $("<td>"+dado.telefone+"</td>");
 				var tdEmail		 	= $("<td>"+dado.email+"</td>");
-				var tdEditar 		= $("<td><a href=\"nivelusuario.php?id="+dado.id+"\">Editar</a></td>");
-				var tdExcluir 		= $("<td><a onclick=\"excluir("+dado.id+")\" href=\"#\">Excluir</a></td>");
+				var tdEditar 		= $("<td><button onclick=\"editar("+dado.id+")\">Editar</button></td>");
+				var tdExcluir 		= $("<td><button onclick=\"excluir("+dado.id+")\">Excluir</button></td>");
 				
 				tr.append(tdID);
 				tr.append(tdNome);
@@ -35,7 +41,7 @@ function carregarNivelUsuario(){
 				tr.append(tdEditar);
 				tr.append(tdExcluir);
 				
-				$("#listar-nivelusuario tbody").append(tr);
+				$("#listar-cliente tbody").append(tr);
 			});				
 		}
 	});
@@ -43,7 +49,7 @@ function carregarNivelUsuario(){
 
 // Executa quando a página terminar de carregar
 $(document).ready(function(){
-	carregarNivelUsuario();
+	carregarCliente();
 });
 
 $("#btn-novo").click(function(){

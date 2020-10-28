@@ -5,10 +5,13 @@
 	if (isset($_GET["id"])){
 		$id = $_GET["id"];
 		
-		$sql = "SELECT descricao FROM descricao_usuario WHERE id = " . $id . " LIMIT 1;";
+		$sql = "SELECT (nome, cpf_cnpj, telefone, email) FROM cadastro_cliente WHERE id = " . $id . " LIMIT 1;";
 		$resultSet = $conexao -> query($sql);
 		if ( $linha = $resultSet -> fetch() ){
-			$descricao = $linha["descricao"];
+			$nome 		= $linha["nome"];
+			$cpf_cnpj 	= $linha["cpf_cnpj"];
+			$telefone 	= $linha["telefone"];
+			$email 		= $linha["email"];
 		}else{
 			echo 'Nenhum registro encontrado';
 			exit;
@@ -16,18 +19,18 @@
 			//modo de Inserção
 		}else{
 			$id = 0;				
-			$descricao = "";
+			$nome = "";
+			$cpf_cnpj = "";
+			$telefone = "";
+			$email = "";
 		}
 ?>
-
 <html>
 	<head>
-		<title>Nível de Usuário</title>
+		<title>Cadastro clientes</title>
 	</head>
 	<body>
-
-		<script type="text/javascript">
-		
+		<script type="text/javascript">	
 		</script>
 	</body>
 </html>

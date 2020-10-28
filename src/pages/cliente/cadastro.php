@@ -4,16 +4,18 @@
 	if ($op == 'add'){
 			// Recebendo as variaveis
 		$id 		= $_GET["id"];
-		$descricao 	= $_GET["descricao"];
-	}
-
-		if ($descricao == ""){
-		echo 'O campo descrição é obrigatório';
+		$nome 		= $_GET["nome"];
+		$cpf_cnpj 	= $_GET["cpf_cnpj"];
+		$telefone 	= $_GET["telefone"];
+		$email 		= $_GET["email"];
+	
+		if ($nome == ""){
+		echo 'O campo nome é obrigatório';
 		exit;
 	}
 
-	if (strlen($descricao) < 3){
-		echo 'O campo descrição tem que ter pelo menos 3 caracteres';
+	if (strlen($nome) < 3){
+		echo 'O campo nome tem que ter pelo menos 3 caracteres';
 		exit;
 	}
 
@@ -22,9 +24,9 @@
 		if (isset($id)){
 		if (is_numeric($id)){
 			if ($id > 0){
-				$instrucaoSQL = "UPDATE nivelusuario SET descricao = '{$descricao}' WHERE id = " .$id;
+				$instrucaoSQL = "UPDATE cadastro_cliente SET nome = '{$nome}', cpf_cnpj = '{$cpf_cnpj}', telefone = '{$telefone}', email = '{$email}' WHERE id = " .$id;
 			}else{
-				$instrucaoSQL = "INSERT INTO nivelusuario (descricao) VALUES ('{$descricao}');";
+				$instrucaoSQL = "INSERT INTO cadastro_cliente (nome, cpf_cnpj, telefone, email) VALUES ('{$nome}', '{$cpf_cnpj}', '{$telefone}', '{$email}');";
 			}
 		}else{
 			echo 'Parametro  inválido';
@@ -40,6 +42,6 @@
 	}else{
 		echo 'Erro ao salvar';
 	}
-	exit;
-}							
+	exit;	
+	}					
 ?>

@@ -1,4 +1,4 @@
-// Arquivo JS cadastro de Nível de Usuário
+// Arquivo JS cadastro de clientes
 $("#btn-salvar").click(function(){
 	if (!validar()) return false;
 	$.ajax({
@@ -8,7 +8,10 @@ $("#btn-salvar").click(function(){
 			page:"cliente/cadastro",
 			op:"add",
 			id:$("#id").val(),
-			descricao:$("#descricao").val()
+			nome:$("#nome").val(),
+			cpf_cnpj:$("#cpf_cnpj").val(),
+			telefone:$("#telefone").val(),
+			email:$("#email").val()
 		},
 		complete:function(ret){
 			
@@ -18,7 +21,7 @@ $("#btn-salvar").click(function(){
 
 // Valida os dados do formulário
 function validar(){
-	var descricao = document.getElementById("descricao");
+	var descricao = document.getElementById("nome");
 	if (descricao.value == ""){
 		//alert('O campo descrição é obrigatório.');
 		descricao.style.backgroundColor = "#FF8C00";

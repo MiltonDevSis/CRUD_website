@@ -14,11 +14,11 @@
 		}else{
 			$id = 0;
 		}
-		if (isset($_POST["descricao"])){
-			$descricao = $_POST["descricao"];
-			$where = $where .  " AND descricao LIKE '%{$descricao}%'";
+		if (isset($_POST["nome"])){
+			$nome = $_POST["nome"];
+			$where = $where .  " AND nome LIKE '%{$nome}%'";
 		}else{
-			$descricao = '';
+			$nome = '';
 		}
 
 		$sql = "SELECT id,nome,cpf_cnpj,telefone,email FROM cadastro_cliente WHERE 1=1 {$where};";
