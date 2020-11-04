@@ -19,6 +19,26 @@ $("#btn-salvar").click(function(){
 	});
 });
 
+$("#btn-voltar").click(function(){
+	if (!validar()) return false;
+	$.ajax({
+		url:"index.php",
+		data:{
+			controller:"page",
+			page:"cliente/cadastro",
+			op:"listar",
+			id:$("#id").val(),
+			nome:$("#nome").val(),
+			cpf_cnpj:$("#cpf_cnpj").val(),
+			telefone:$("#telefone").val(),
+			email:$("#email").val()
+		},
+		complete:function(ret){
+			echo"chegou";
+		}
+	});
+});
+
 // Valida os dados do formulário
 function validar(){
 	var descricao = document.getElementById("nome");
