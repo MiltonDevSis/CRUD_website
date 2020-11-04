@@ -7,6 +7,9 @@ function excluir(usuario){
 			controller:"page",
 			page:"cliente/excluir",
 			id:usuario
+		},
+		complete:function(ret){
+			carregarCliente();
 		}
 	});	
 }
@@ -20,6 +23,9 @@ function carregarCliente(){
 			controller:"page",
 			page:"cliente/listar",
 			op:"listar"
+		},
+		beforeSend:function(){
+			$("#listar-cliente tbody").html("");
 		},
 		complete:function(ret){
 			var retorno = ret.responseJSON;
