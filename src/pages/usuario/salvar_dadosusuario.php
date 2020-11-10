@@ -24,10 +24,11 @@
 		exit;
 	}
 	$conexao = new PDO( "mysql:host=localhost;dbname=modelagem;port=3308", "root", "" );
-	$instrucaoSQL = "INSERT INTO dados_usuario (nome, login, senha, nivel) VALUES ('$nome','$login','$senha','$nivel');";
+	$instrucaoSQL = "INSERT INTO usuario (nome, login, senha, nivel) VALUES ('$nome','$login','$senha','$nivel');";
 	$result = $conexao->exec($instrucaoSQL);
-	if($result){
+	if($result == true){
 		echo 'Salvo com sucesso';
 	}else{
 		echo 'Erro ao salvar';	
 	}
+	exit;

@@ -1,34 +1,45 @@
 <html>
-	<meta charset="utf-8"/>
-	<head>
-		<title>Usuário</title>
-	</head>
-	<body>
-		
-		<form  onsubmit= "return validarCampos();" action="salvar_dadosusuario.php" method="POST">
-			<fieldset>
-			<legend>Usuário</legend>
-			<label for="nome">Nome</label>
-			<input type="text" id="nome" name="nome" /><br />			
-			<br />
-			<label for="login">Login</label>
-			<input type="text" id="login" name="login" /><br />			
-			<br />
-			<label for="senha">Senha</label>
-			<input type="password" id="senha" name="senha" /><br />			
-			<br />
-			<label for="nivel">Nível</label>
-			<select id="nivel" name="nivel">
-				<option value="1">Desenvolvedor</option>
-				<option value="2">Administrador</option>
-				<option value="3">Colaborador</option>
-			</select><br />
-			<br />
-			<input type="submit" value="Salvar"/>
-			</fieldset>
-		</form>
-		
-		<script type="text/javascript">
+<meta charset="utf-8"/>
+<head>
+	<title>Usuário</title>
+</head>
+
+<body>
+	<div class="container" style="margin: 20px">
+		<div class="col-md-4">
+			<form  onsubmit= "return validarCampos();" action="salvar_dadosusuario.php" method="POST">
+				<fieldset>
+					<legend>Usuário</legend>
+					<div class="form-group">
+						<label for="nome">Nome</label>
+						<input type="text" id="nome" name="nome" class="form-control" />
+					</div>
+					<br/>			
+
+					<label for="login">Login</label>
+					<input type="text" id="login" name="login" class="form-control" /><br />			
+
+					<label for="senha">Senha</label>
+					<input type="password" id="senha" name="senha" class="form-control" />
+					<small id="emailHelp" class="form-text text-muted">Nunca forneça senhas para desconhecidos.</small>
+					<br/>		
+
+					<div class="input-group-prepend">
+						<label for="nivel" class="input-group-text">Nível</label>			
+						<select id="nivel" name="nivel" class="custom-select">
+							<option selected>Escolha uma opção...</option>
+							<option value="1">Desenvolvedor</option>
+							<option value="2">Administrador</option>
+							<option value="3">Colaborador</option>
+						</select>
+					</div><br/>
+
+					<input type="button" value="Salvar" class="btn btn-dark" id="btn-salvar" />
+				</fieldset>
+			</form>
+		</div>
+	</div>	
+	<script type="text/javascript">
 		
 		function validarCampos(){
 			
@@ -43,7 +54,7 @@
 				nome.focus();
 				return false;
 			}
-	
+
 			if ( login.value = ""){
 				login.style.backgroundColor = "#ff8c00";
 				login.style.color = "#fff";
@@ -59,7 +70,7 @@
 			}
 			return true;
 		}
-		</script>
-		
-	</body>
+	</script>
+
+</body>
 </html>
