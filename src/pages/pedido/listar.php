@@ -1,6 +1,6 @@
 <?php
 	// Conexão com banco de dados
-	$conexao = new PDO ("mysql:host=localhost;dbname=modelagem;port=3306", "root", "root");
+	$conexao = new PDO ("mysql:host=localhost;dbname=modelagem;port=3308", "root", "");
 
 	// Opção para listar
 	$op = isset($_GET["op"])?$_GET["op"]:'';	

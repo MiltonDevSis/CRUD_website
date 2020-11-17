@@ -19,7 +19,7 @@ if ($op == "add"){
 	}
 
 	// Conexão com banco de dados
-	$conexao = new PDO ("mysql:host=localhost;dbname=modelagem;port=3306", "root", "root");
+	$conexao = new PDO ("mysql:host=localhost;dbname=modelagem;port=3308", "root", "");
 	
 	$id 		= isset($_GET["id"])?$_GET["id"]:0;
 	if ($id > 0){
