@@ -10,7 +10,7 @@ class AutenticacaoTest extends TestCase{
 
 
 	public function testIsSenhaForte(){
-		$autenticacao = new Autentication();
-		$this->assertTrue($autenticacao->isSenhaForte('123'));
+		$autenticacao = new Autenticacao();
+		$this->assertTrue($autenticacao->isSenhaForte('123132132132'));
 	}
 }
