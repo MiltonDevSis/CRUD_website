@@ -8,6 +8,6 @@ class MovimentacaoTest extends TestCase {
 
 	public function testDataPedido(){
 
-		
+		$this->assertEquals(780, movimentacao::somaMovimentacoes());
 	}
 }
